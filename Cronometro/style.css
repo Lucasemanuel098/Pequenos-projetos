@@ -1,0 +1,108 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(#50d5b7,#067d68);
+}
+.quadrado {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.335);
+    padding: 30px;
+    border-radius: 10px;
+    color: rgb(23, 62, 7);
+    
+}
+h1 {
+    color: #455EB5;
+    font-size: 4rem;
+}
+.dentro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+span {
+    color: #455EB5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border: 2px solid #455EB5;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+}
+.actions button {
+    background: linear-gradient(#3218c4,#168fc3);
+    border-radius: 10px;
+    margin: 20px;
+    border: none;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.419);
+    width: 60px;
+    height: 60px;
+    transition: 2s;
+    color: white;
+    transition: transform 0.3s ease;
+}
+.buttonanimado {
+    transform: scale(1.2);
+}
+
+.actions button:hover{
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 600px) {
+    
+    h1 {
+        font-size: 2rem;
+    }
+    #conto {
+        font-size: 2rem;
+        height: 150px;
+        width: 150px;
+    }
+    button {
+        
+        top: 139px;
+        width: 60px;
+        
+    }
+    .buttonbaixo {
+        position: inherit;
+        width: 150px;
+    }
+}
+@media (max-width: 400px) {
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    #conto {
+        font-size: 1.5rem;
+        height: 100px;
+        width: 100px;
+    }
+    button {
+        width: 1rem;
+        height: 1rem;
+        top: 114px;
+        width: 60px;
+    }
+    
+}

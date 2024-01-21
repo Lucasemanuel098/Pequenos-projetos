@@ -8,8 +8,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 58%, rgba(252,176,69,1) 100%);}
+    color: wheat;
+    background-color: #9b59b6;
+}
 h1 {
     font-style: italic;
     margin-bottom: 50px;
@@ -29,12 +30,16 @@ h1 {
 input {
     margin: 10px;
     width: 80px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
 }
 .conteiner{
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    border-radius: 30px;
     padding: 20px;
     box-shadow: 3px 3px 50px rgba(0, 0, 0, 0.716);
 }
