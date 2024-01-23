@@ -14,6 +14,7 @@ header {
     align-items: center;
     padding: 10px;
     border-bottom: 3px solid #626262;
+   
 }
 header p {
     font-weight: 800;
@@ -28,15 +29,12 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: 92vh;
     flex-direction: column;
     
     
 }
 
-main h1 and h2 and span{
-    font-weight: 300;
-}
 main img {
     border-radius: 50%;
     height: 150px;
@@ -83,3 +81,28 @@ h2 span::before{
         width: 100%;
     }
 }
+
+
+/**
+Site responsivo (400px)
+**/
+
+@media (max-width: 500px) {
+      header {
+        flex-direction: column;
+        font-size: 0.7em;
+      }
+      header p {
+        margin-bottom: 10px;
+      }
+      main {
+        font-size: 0.7em;
+      }
+      main img {
+        height: 100px;
+        width: 100px;
+      }
+}
+
+
+
