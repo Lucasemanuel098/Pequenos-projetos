@@ -34,17 +34,25 @@ main {
     min-height: 92vh;
     flex-direction: column;
     
+    
 }
 
 main img {
     border-radius: 50%;
     height: 150px;
     width: 150px;
+    z-index: 2;
 }
 canvas {
     position: absolute;
+    z-index: 1;
 }
-
+h1 {
+    z-index: 2;
+}
+h2 {
+    z-index: 2;
+}
 /**
 Criando a animação do meu nome
 **/

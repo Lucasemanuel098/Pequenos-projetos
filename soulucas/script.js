@@ -5,7 +5,7 @@ particlesJS("particles-js", {
                 value: 3,
             },
             number: {
-                value:10,
+                value:40,
             }, 
          line_linked: {
             enable:false,
