@@ -25,13 +25,14 @@ header p {
 header a {
     margin: 10px;
 }
+
 main {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
     min-height: 92vh;
     flex-direction: column;
-    
     
 }
 
@@ -39,6 +40,9 @@ main img {
     border-radius: 50%;
     height: 150px;
     width: 150px;
+}
+canvas {
+    position: absolute;
 }
 
 /**
