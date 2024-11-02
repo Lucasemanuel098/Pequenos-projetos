@@ -24,8 +24,12 @@ header p {
 }
 header a {
     margin: 10px;
+    transition: 1s;
 }
-
+header a:hover{
+    filter: drop-shadow(0px 0px 5px #36ee64);
+    color: #36ee64;
+}
 main {
     display: flex;
     position: relative;
@@ -36,12 +40,35 @@ main {
     
     
 }
-
+/**
+Criando a animação a minha foto
+**/
 main img {
     border-radius: 50%;
+    border: 2px solid #36ee64;
+    filter: drop-shadow(0px 0px 5px #36ee64);
     height: 150px;
     width: 150px;
+    position: relative;
     z-index: 2;
+    animation: photo-animation 4s  ease-in-out infinite;
+    
+}
+#apresetion {
+    z-index: 2;
+    position: relative;
+    animation: photo-animation 4s  ease-in-out infinite;
+}
+@keyframes photo-animation {
+    0% {
+        top: 0px;
+    }
+    50% {
+        top: 20px;
+    }
+    100% {
+        top: 0px;
+    }
 }
 canvas {
     position: absolute;
@@ -68,10 +95,10 @@ h2 span::before{
     position: absolute;
     top: 0;
     left: 0;
-    color: #9b59b6;
+    color: #36ee64;
     overflow: hidden;
-    border-right: 4px solid #9b59b6;
-    filter: drop-shadow(0px 0px 5px #9b59b6) drop-shadow(0px 0px 25px #9b59b6);
+    border-right: 4px solid #ffffff;
+    filter: drop-shadow(0px 0px 5px #11fc86) drop-shadow(1px 2px 20px #43e7a8);
     animation: animation 3s linear infinite;
 }
 
@@ -116,5 +143,12 @@ Site responsivo (400px)
       }
 }
 
+
+.arrow-down {
+    position: absolute;
+    z-index: 2;
+    margin-top: 38%;
+    animation: photo-animation 1s ease-in-out infinite;
+}
 
 
