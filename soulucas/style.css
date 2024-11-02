@@ -147,7 +147,7 @@ Site responsivo (400px)
 .arrow-down {
     position: absolute;
     z-index: 2;
-    margin-top: 38%;
+    margin-top: 700px;
     animation: photo-animation 1s ease-in-out infinite;
 }
 
