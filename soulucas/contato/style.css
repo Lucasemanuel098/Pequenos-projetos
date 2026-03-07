@@ -14,7 +14,10 @@ header {
     border-bottom: 4px solid white;
     font-size: 2em;
 }
-
+body {
+    margin: 0;
+    padding: 0;
+}
 main {
     display: flex;
     align-items: center;
