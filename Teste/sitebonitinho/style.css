@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    color: white;
+    font-family: monospace;
+    background: linear-gradient(180deg, #0a0a0a, #1a0033, #000022);
+}
+#inicio button{
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#inicio input {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+#kris {
+    height: 200px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s;
+}
+#kris.aparecer {
+    opacity: 1;
+    transform: translateY(0);
+}
+#jogo {
+    display: none;
+    
+}
+#texto {
+    white-space: pre-line;
+    
+    
+}
+.caixa {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    border: 3px solid white;
+    padding: 20px;
+    background-color: black;
+    text-align: left;
+    font-size: 18px;
+}
