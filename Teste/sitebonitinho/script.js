@@ -1,34 +1,71 @@
+// 1. Declaramos as variáveis globais no topo para que todas as funções as vejam
+let indice = 0;
+let estafalando = false;
+let falas = []; // Começa vazia e será preenchida no iniciar()
+
 function iniciar() {
+    // 2. Pegamos o nome e preenchemos a lista de falas AGORA
     const nome = document.getElementById('name').value;
+    falas = [
+    `* ${nome} entrou no mundo estranho.`,
+    "* Um silêncio preenche o ar...",
+    "* Mas você não está sozinho.",
+    "* Uma figura familiar aparece diante de você.",
+    "* Kris: ...",];
+
     document.getElementById(`inicio`).style.display = 'none';
-    document.getElementById(`jogo`).style.display = 'block';
+    document.getElementById(`jogo`).style.display = 'flex';
     const kris = document.getElementById("kris");
+
     
 
-    setTimeout(() => {
-        kris.classList.add("aparecer");
-    }, 100);
-
-    const mensagem = `*${nome}...\n*Você finalmente chegou.\n*Eu estava esperando por você.`
-    escrevertexto(mensagem);
+    document.body.addEventListener('click', proximo);
+    
+    // Opcional: já dispara a primeira fala assim que inicia
+    proximo();
 }
-function escrevertexto(mensagem) {
+
+function proximo() {
+    // Só avança se não estiver falando e se ainda houver frases na lista
+    if (estafalando == false && indice < falas.length) {
+        if (indice == 3) {
+            {
+            setTimeout(() => {
+            kris.classList.add("aparecer");
+            }, 100);
+            }
+        }
+        escrevertexto(falas[indice]);   
+        indice++;
+    }
+}
+
+function escrevertexto(textoParaExibir) {
+    // 3. REMOVI o 'let' daqui. Agora alteramos a variável global!
+    estafalando = true; 
+    const seta = document.getElementById('seta');
+    seta.style.display = 'none'; // Esconde a seta enquanto fala
+
     let i = 0;
     const textoElement = document.getElementById('texto');
-    const som = document.getElementById(`som`)
+    textoElement.innerHTML = ``;
+    const som = document.getElementById(`som`);
     
-    function escrever(){
-        if (i < mensagem.length){
-            textoElement.innerHTML += mensagem[i]
-            if (mensagem[i] !== ` ` && mensagem[i] !== `\n`){
+    function escrever() {
+        if (i < textoParaExibir.length) {
+            textoElement.innerHTML += textoParaExibir[i];
+            
+            if (textoParaExibir[i] !== ` ` && textoParaExibir[i] !== `\n`) {
                 som.currentTime = 0;
-                som.play()
+                som.play();
             }
-            i++
-            setTimeout(escrever, 80)
+            i++;
+            setTimeout(escrever, 80);
+        } else {
+            // 4. Quando termina a frase, abrimos a trava
+            estafalando = false; 
+            seta.style.display = 'block'; // Mostra a seta quando termina a fala
         }
-        
     }
-    escrever()
-    
+    escrever();
 }
