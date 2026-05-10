@@ -5,7 +5,7 @@ const containerPaleta = document.getElementById(`paleta`)
 
 const cores = [
     '#000000', `#222034`, '#ffffff', '#ff0000', `#fbf236`, `#6abe30`, `#306082`, `#5fcde4`, `#ffcc00`,
-   ` #6666ff`, `#cc00cc`, `#190d05`, `#2f1606`
+   ` #6666ff`, `#cc00cc`, `#190d05`
 ]
 function lerCores(){
     cores.forEach(cor => {
