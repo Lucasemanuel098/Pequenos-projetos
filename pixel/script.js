@@ -2,11 +2,13 @@ let desenhando = false
 const tela = document.getElementById(`tela`)
 const caneta = tela.getContext(`2d`) 
 const containerPaleta = document.getElementById(`paleta`) 
+
 const cores = [
     '#000000', `#222034`, '#ffffff', '#ff0000', `#fbf236`, `#6abe30`, `#306082`, `#5fcde4`, `#ffcc00`,
    ` #6666ff`, `#cc00cc`, `#190d05`, `#2f1606`
 ]
-cores.forEach(cor => {
+function lerCores(){
+    cores.forEach(cor => {
     const botao = document.createElement(`button`)
     botao.style.backgroundColor = cor;
     botao.className = `botao-cor`
@@ -16,7 +18,9 @@ cores.forEach(cor => {
     }
 
     containerPaleta.appendChild(botao)
-})
+})  
+}
+
 
 tela.getContext(`2d`)
 caneta.fillStyle = `white`
@@ -106,7 +110,27 @@ function Black(){
 function White(){
     caneta.fillStyle = `White`
 }
-
+function salvar() {
+    const link = document.createElement(`a`)
+    const imagem = tela.toDataURL(`image/png`)
+    link.href = imagem
+    link.download = `Ficou_horroroso.png`
+    link.click()
+    console.log(tela.toDataURL(`image/png`))
+}
+function adicionar(){
+    const addcolor = document.getElementById(`addcolor`).value
+    cores.push(addcolor)
+    containerPaleta.innerHTML = ``
+    lerCores()
+}
+function remover(){
+    const addcolor = document.getElementById(`addcolor`).value
+    cores.pop()
+    containerPaleta.innerHTML = ``
+    lerCores()
+}
+lerCores()
 
 
 

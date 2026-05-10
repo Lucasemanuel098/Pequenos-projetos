@@ -12,19 +12,25 @@
 <body>
     <header>
         <h1>Pixel Art</h1>
-        <p>luq</p>
+        
     </header>
+    
+    <div class="config">
+        <input type="color" name="" id="addcolor">
+        
+        <button onclick="adicionar()">Adicionar</button>
+        <button onclick="remover()">Remover</button>  
+    </div>
     
     <div>
         <canvas id="tela" width="640" height="640"></canvas>
     </div>
     
     <div id="paleta" class="paleta-container">
-          
+
     </div>
+    <button id="salvar" onclick="salvar()" class="botao-salvar">salvar</button>
     
-
-
     <script src="script.js"></script>
 </body>
 </html>

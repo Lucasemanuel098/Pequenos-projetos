@@ -28,10 +28,7 @@ header {
 canvas {
     background-color: #2e2f45;
 }
-button {
-    height: 50px;
-    width: 100px;
-}
+
 .paleta-container {
     display: flex;
     flex-wrap: wrap;
@@ -43,4 +40,28 @@ button {
     width: 35px;
     height: 35px;
     border: 2px solid #333;
+}
+.botao-cor:hover{
+    cursor: pointer;
+}
+.botao-salvar{
+    height: 40px;
+    width: 200px;
+    margin: 20px;
+    background-color: #2e2f45;
+    border: 1px solid black;
+    color: white;
+    font-family: "VT323";
+    font-size: 1.4em;
+}
+.config button{
+    height: 40px;
+    width: 200px;
+    margin: 20px;
+    background-color: #2e2f45;
+    border: 1px solid black;
+    color: white;
+    font-family: "VT323";
+    font-size: 1.4em;
+    
 }
