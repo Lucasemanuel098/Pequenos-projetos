@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1c2c;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 98vh;
+}
+h1 {
+    font-family: "VT323";
+    color: #e0e6ff;
+    font-size: 5em;
+    margin: 0;
+    padding: 0;
+}
+p {
+    font-family: "VT323";
+    color: white;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+
+}
+header {
+    margin: 40px;
+}
+canvas {
+    background-color: #2e2f45;
+}
+button {
+    height: 50px;
+    width: 100px;
+}
+.paleta-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+    justify-content: center;
+}
+.botao-cor {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #333;
+}

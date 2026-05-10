@@ -21,7 +21,7 @@ function iniciar() {
 
     document.body.addEventListener('click', proximo);
     
-    // Opcional: já dispara a primeira fala assim que inicia
+    //dispara a primeira fala assim que inicia
     proximo();
 }
 
@@ -32,6 +32,7 @@ function proximo() {
             {
             setTimeout(() => {
             kris.classList.add("aparecer");
+            
             }, 100);
             }
         }
@@ -41,7 +42,6 @@ function proximo() {
 }
 
 function escrevertexto(textoParaExibir) {
-    // 3. REMOVI o 'let' daqui. Agora alteramos a variável global!
     estafalando = true; 
     const seta = document.getElementById('seta');
     seta.style.display = 'none'; // Esconde a seta enquanto fala
@@ -62,9 +62,8 @@ function escrevertexto(textoParaExibir) {
             i++;
             setTimeout(escrever, 80);
         } else {
-            // 4. Quando termina a frase, abrimos a trava
             estafalando = false; 
-            seta.style.display = 'block'; // Mostra a seta quando termina a fala
+            seta.style.display = 'block'; 
         }
     }
     escrever();
