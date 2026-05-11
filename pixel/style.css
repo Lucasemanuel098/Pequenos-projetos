@@ -5,7 +5,7 @@ body {
     background-color: #1a1c2c;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
-    height: 98vh;
+    min-height: 100vh;
 }
 h1 {
     font-family: "VT323";
@@ -28,7 +28,11 @@ header {
 canvas {
     background-color: #2e2f45;
 }
-
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .paleta-container {
     display: flex;
     flex-wrap: wrap;
@@ -66,3 +70,73 @@ canvas {
     font-size: 1.4em;
     
 }
+
+.color-picker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#addcolor {
+    background-color: #1a1a2e; /* Um pouco mais escuro que o fundo */
+    border: 2px solid #4f5b7d;  /* Borda sutil */
+    border-radius: 4px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace; /* Ou sua fonte pixelada */
+    padding: 8px 12px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+}
+.preview {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid #444;
+    background: red;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin: 20px;
+}
+main {
+    display: flex;
+    align-items: flex-start; /* Alinha o topo dos elementos */
+    justify-content: center;
+    width: 100%;
+    gap: 20px; /* Espaço entre as colunas */
+}
+.ferramentas div, .config div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.ferramentas input {
+    height: 40px;
+    width: 200px;
+    background-color: #2e2f45;
+    border: 1px solid black;
+    color: white;
+    font-size: 1.4em;
+}
+.ferramentas button{
+    height: 40px;
+    width: 200px;
+    margin: 20px;
+    background-color: #2e2f45;
+    border: 1px solid black;
+    color: white;
+    font-family: "VT323";
+    font-size: 1.4em;
+    
+}
+.config, .ferramentas {
+    flex: 1; /* Faz asas duas laterais terem o mesmo peso */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5em;
+    color: white;
+}
+

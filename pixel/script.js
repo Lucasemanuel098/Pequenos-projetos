@@ -2,7 +2,12 @@ let desenhando = false
 const tela = document.getElementById(`tela`)
 const caneta = tela.getContext(`2d`) 
 const containerPaleta = document.getElementById(`paleta`) 
+const inputColor = document.getElementById(`addcolor`)
+const preview = document.querySelector(`.preview`)
 
+inputColor.addEventListener(`input`, () => {
+    preview.style.background = inputColor.value
+})
 const cores = [
     '#000000', `#222034`, '#ffffff', '#ff0000', `#fbf236`, `#6abe30`, `#306082`, `#5fcde4`, `#ffcc00`,
    ` #6666ff`, `#cc00cc`, `#190d05`
@@ -88,7 +93,7 @@ function grid(){
         caneta.lineTo(20 * i, 640)
         caneta.stroke()
     }
-    for(let i = 0; i <32; i++) {
+    for(let i = 0; i < 32; i++) {
         caneta.beginPath()
         caneta.lineWidth = 2
         caneta.moveTo(0, 20 * i)
@@ -101,15 +106,6 @@ function grid(){
     
     
 }
-function Red(){
-    caneta.fillStyle = `red`
-}
-function Black(){
-    caneta.fillStyle = `black`
-}
-function White(){
-    caneta.fillStyle = `White`
-}
 function salvar() {
     const link = document.createElement(`a`)
     const imagem = tela.toDataURL(`image/png`)
@@ -118,17 +114,41 @@ function salvar() {
     link.click()
     console.log(tela.toDataURL(`image/png`))
 }
-function adicionar(){
-    const addcolor = document.getElementById(`addcolor`).value
-    cores.push(addcolor)
-    containerPaleta.innerHTML = ``
-    lerCores()
+function adicionar(){    
+    if (cores.includes(inputColor.value) == false) {
+        cores.push(inputColor.value)
+        containerPaleta.innerHTML = ``
+        lerCores()   
+    } else {
+        window.alert (`Cor ${inputColor.value} já foi adicionada a paleta`)
+    }
+    
 }
 function remover(){
-    const addcolor = document.getElementById(`addcolor`).value
-    cores.pop()
-    containerPaleta.innerHTML = ``
-    lerCores()
+    if (cores.length > 12) {
+        const addColor = document.getElementById(`addcolor`).value
+        cores.pop()
+        containerPaleta.innerHTML = ``
+        lerCores()    
+    } else {
+        window.alert(`Cores adicionais ja foram removidas.`)
+    }
+    
+}
+function redimencionar() {
+    const x = document.getElementById(`altura`)
+    const y = document.getElementById(`largura`)
+    if (x.value <= 32 && y.value <= 32){
+        if (x.value >= 1 && y.value >= 1) {
+            tela.height = x.value*20
+            tela.width = y.value*20
+            grid(x.value, y.value)
+        }
+    } else {
+        window.alert(`Por favor, escolhar um número entre 0 e 32.`)
+    }
+    
+
 }
 lerCores()
 

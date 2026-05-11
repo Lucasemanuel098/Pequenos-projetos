@@ -14,17 +14,40 @@
         <h1>Pixel Art</h1>
         
     </header>
-    <input type="color" name="" id="addcolor">
-    <div class="config">
-        
-        
-        <button onclick="adicionar()">Adicionar</button>
-        <button onclick="remover()">Remover</button>  
-    </div>
     
-    <div>
-        <canvas id="tela" width="640" height="640"></canvas>
+    <main>
+        <main>
+    <div class="config">
+        <div class="color-picker-group">
+            <div class="preview"></div>
+            <input type="color" id="addcolor">
+        </div>
+        <div class="buttons-row">
+            <button onclick="adicionar()">Adicionar</button>
+            <button onclick="remover()">Remover</button>
+        </div>
     </div>
+
+    <div class="canvas-container">
+        <canvas id="tela" width="600" height="600"></canvas>
+    </div>
+
+    <div class="ferramentas">
+        <div class="input-group">
+            <p>Altura(Px)</p>
+            <input type="number" id="altura">
+        </div>
+        <div class="input-group">
+            <p>Largura(Px)</p>
+            <input type="number" id="largura">
+        </div>
+        <button onclick="redimencionar()">Redimensionar</button>
+    </div>
+</main>
+    </div>   
+    </main>
+    
+    
     
     <div id="paleta" class="paleta-container">
 
