@@ -86,18 +86,18 @@ function desenhar(event) {
     
 }
 function grid(){
-        for(let i = 0; i < 32; i++) {
+        for(let i = 0; i < 64; i++) {
         caneta.beginPath()
         caneta.lineWidth = 2
         caneta.moveTo(20 * i, 0)
-        caneta.lineTo(20 * i, 640)
+        caneta.lineTo(20 * i, tela.height)
         caneta.stroke()
     }
-    for(let i = 0; i < 32; i++) {
+    for(let i = 0; i < 64; i++) {
         caneta.beginPath()
         caneta.lineWidth = 2
         caneta.moveTo(0, 20 * i)
-        caneta.lineTo(640, 20 * i)
+        caneta.lineTo(tela.width, 20 * i)
         caneta.stroke()
     }
     
@@ -138,14 +138,15 @@ function remover(){
 function redimencionar() {
     const x = document.getElementById(`altura`)
     const y = document.getElementById(`largura`)
-    if (x.value <= 32 && y.value <= 32){
+    if (x.value <= 64 && y.value <= 64){
         if (x.value >= 1 && y.value >= 1) {
             tela.height = x.value*20
             tela.width = y.value*20
+
             grid(x.value, y.value)
         }
     } else {
-        window.alert(`Por favor, escolhar um número entre 0 e 32.`)
+        window.alert(`Por favor, escolhar um número entre 0 e 64.`)
     }
     
 
